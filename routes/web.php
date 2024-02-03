@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PosController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\LoginController;
@@ -30,6 +31,8 @@ Route::get("/recent-products", [HomeController::class, 'recentProducts']);
 
 //Product
 Route::post("/submit-product", [ProductController::class, 'createProduct'])->name("createProduct");
+
+Route::get("/get-products", [PosController::class, 'fetchProducts']);
 
 //Category
 Route::post("/submit-category", [CategoryController::class, 'createCategory'])->name("createCategory");
