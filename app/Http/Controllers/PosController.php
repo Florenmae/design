@@ -16,4 +16,10 @@ class PosController extends Controller
     public function fetchProducts(){
         return Product::all();
     }
+
+    public function fetchCategories(){
+        return Categories::all();
+    }
+
+
 }

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PosController;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\LoginController;
@@ -33,9 +34,16 @@ Route::get("/recent-products", [HomeController::class, 'recentProducts']);
 Route::post("/submit-product", [ProductController::class, 'createProduct'])->name("createProduct");
 
 Route::get("/get-products", [PosController::class, 'fetchProducts']);
+Route::get('/fetch-categories', [PosController::class, 'fetchCategories']);
 
 //Category
 Route::post("/submit-category", [CategoryController::class, 'createCategory'])->name("createCategory");
+
+Route::post('/addToCart', [CartController::class, 'addToCart'])->name("addToCart");
+Route::get('/showCartItem', [CartController::class, 'showCartItem']);
+Route::post('/delete-item', [CartController::class, 'deleteItem']);
+
+
 
 //
 Route::get('/{vue?}', function(){

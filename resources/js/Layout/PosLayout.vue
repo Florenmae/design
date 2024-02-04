@@ -1,12 +1,8 @@
-<!-- layout.vue -->
-
 <template>
     <div class="flex flex-col h-screen border-gray-300">
-        <!-- Header Section -->
         <header
             class="bg-slate-500 text-black p-4 border-b border-gray-300 flex justify-between items-center"
         >
-            <!-- Your header content goes here -->
             <div class="flex items-center space-x-4">
                 <img
                     src="../../../public/mmsu_logo.png"
@@ -43,9 +39,7 @@
                 </div>
             </div>
 
-            <!-- Cart and Dropdown Profile -->
             <div class="flex items-center space-x-4">
-                <!-- Cart Icon -->
                 <button class="text-black flex items-center space-x-4">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -61,7 +55,6 @@
                     </svg>
                 </button>
 
-                <!-- Dropdown Profile -->
                 <div class="relative group">
                     <button class="text-black flex items-center space-x-2">
                         <img
@@ -92,34 +85,11 @@
         </header>
 
         <main class="flex-1 flex">
-            <!-- <aside class="w-48 bg-gray-50 text-white p-4">
-                <nav>
-                    <ul>
-                        <li>
-                            <router-link to="/home" class="text-black"
-                                >Home</router-link
-                            >
-                        </li>
-                        <li>
-                            <router-link to="/sales" class="text-black"
-                                >Sales</router-link
-                            >
-                        </li>
-                    </ul>
-                </nav>
-            </aside> -->
-
             <section class="flex-1 p-4">
                 <slot></slot>
             </section>
         </main>
     </div>
-    <!-- <div class="fixed w-screen ml-64 h-10 shadow-md"></div>
-    <div class="ml-64 px-10">
-        <div class="flex flex-col items-center pb-20 pt-10 min-h-screen">
-            <slot></slot>
-        </div>
-    </div> -->
 </template>
 
 <script>
@@ -127,7 +97,6 @@ export default {
     name: "PosLayout",
     methods: {
         handleProfileClick() {
-            // Add your logic for handling the profile click event
             console.log("Profile clicked!");
         },
     },
